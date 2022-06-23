@@ -1,9 +1,23 @@
 <h2 class="text-center">Reporte de Facturacion</h2>
+
+<div class="mt-4 container d-flex flex-row w-100 justify-content-center">
+    <span class="text-primary fs-3 text-center">Gastos totales: <b>{{get()}}</b></span>
+    <div class=" ms-4 d-flex flex-row">
+            <label for="inputText" class="ms-5 me-4 col-sm-2 fs-5 col-form-label">Ingresos: </label>
+            <input name="ingresos" placeholder="Ingresos" [(ngModel)]="ingresos" (ngModelChange)="setImpuesto()"  type="text" class="form-control ms-2">
+      </div>
+</div>
 <hr>
-<p>Gastos totales: <b>#</b></p>
-<input type="text" placeholder="Ingresos">
-<p>Impuesto a la Renta: <b>#</b></p>
+<p class="fs-2 text-center mt-2">Impuesto a la Renta: <b [innerHTML]="setImpuesto()"></b></p>
 
 <h3>Calculos</h3>
+<hr>
+<p>Ingresos: {{ingresos}}</p> 
+<p>Gastos: {{gastos}} </p>
+<p>Base Imponible: {{baseImponible}}</p>
+<p>Excedente: {{excedente}} ({{baseImponible}} - {{impuestoFraccionBasica}})</p>
+<p>Porcentaje Excendente: {{porcentajeExcendete}}</p>
+<p>Impuesto a la Renta: <b>{{setImpuesto()}}</b> ({{impuestoFraccionBasica}} + {{porcentajeExcendete}})</p>
 
-<h3>Grafico</h3>
+
+<!--<h3>Grafico</h3>-->

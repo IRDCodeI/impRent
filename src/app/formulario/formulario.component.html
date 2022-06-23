@@ -1,20 +1,20 @@
 <div class="container">
     <h2 class="text-center">Facturas Gastos</h2>
     <div container class="w-auto d-flex justify-content-center mt-4">
-        <form  class="w-50">
+        <form class="w-50">
             <div class="input-group mb-3">
                 <span class="input-group-text" id="basic-addon1">RUC</span>
-                <input type="text" class="form-control" placeholder="Numero de RUC" aria-label="Username" aria-describedby="basic-addon1">
+                <input name="ruc" [(ngModel)]="ruc" type="text" class="form-control" placeholder="Numero de RUC" aria-label="Username" aria-describedby="basic-addon1">
               </div>
             <div class="input-group mb-3">
                <span class="input-group-text" id="basic-addon1">Valor Fact:</span>
-               <input type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+               <input name="cant" [(ngModel)]="cant" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
             </div>
-            <select class="form-select" aria-label="Default select example">
+            <select id="typeG" name="typeG" [(ngModel)]="typeG" class="form-select" aria-label="Default select example">
                 <option [value] = "item.id" *ngFor="let item of items">{{item.name}}</option>
               </select>
-              <button class="btn btn-secondary mt-3">Agregar</button>
-              <button type="submit" class="btn btn-primary mt-3 ms-5">Calcular</button>
+              <button (click)='add()' class="btn btn-secondary mt-3">Agregar</button>
+              <a routerLink="/report" (click)='calcular()' class="btn btn-primary mt-3 ms-5">Calcular</a>
         </form>
     </div>
 </div>
@@ -27,7 +27,7 @@
                 <th scope="col">Cantidad</th>
             </tr>
         </thead>
-        <tbody >
+        <tbody class="tableGasto">
             
         </tbody>
     </table>
