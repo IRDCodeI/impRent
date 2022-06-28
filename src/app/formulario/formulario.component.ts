@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { GastosService } from '../gastos.service';
+
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -25,7 +25,7 @@ export class FormularioComponent implements OnInit {
     { id: 'Salud', name: 'Salud'}
   ]
 
-  constructor(private gastos_service:GastosService) { }
+  constructor() { }
 
   ngOnInit(): void {}
 

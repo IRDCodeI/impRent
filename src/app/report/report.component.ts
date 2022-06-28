@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { GastosService } from '../gastos.service';
-
+import { DataService } from '../data.service';
+import { user } from '../user';
 @Component({
   selector: 'app-report',
   templateUrl: './report.component.html',
@@ -16,7 +16,14 @@ export class ReportComponent implements OnInit {
   ingresos = 0;
   gastos = 0;
 
-  constructor(private gastos_service:GastosService) { }
+  users: user[] = [];
+
+  constructor(private dataService: DataService) {
+    this.dataService.obtenerDatos().subscribe(data => {
+      console.log(data);
+      this.users = data;
+    })
+   }
 
   ngOnInit(): void {  }
 

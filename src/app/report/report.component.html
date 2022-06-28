@@ -19,5 +19,34 @@
 <p>Porcentaje Excendente: {{porcentajeExcendete}}</p>
 <p>Impuesto a la Renta: <b>{{setImpuesto()}}</b> ({{impuestoFraccionBasica}} + {{porcentajeExcendete}})</p>
 
-
-<!--<h3>Grafico</h3>-->
+<h3 class="text-center">Usuarios</h3>
+<hr>
+<div class="container w-100 mt-3">
+      <table class="table table-success table-striped table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Nombre</th>
+                    <th scope="col">User</th>
+                    <th scope="col">Email</th>
+                </tr>
+            </thead>
+            <tbody >
+                  <tr  *ngFor="let user of users">
+                        <td>
+                              {{user.id}}
+                        </td>
+                        <td>
+                              {{user.name}}
+                        </td>
+                        <td>
+                              {{user.username}}
+                        </td>
+                        <td>
+                              {{user.email}}
+                        </td>
+                  </tr>
+                  
+            </tbody>
+        </table>
+</div>
